@@ -205,7 +205,12 @@ function Index() {
             <a href="#instagram" aria-label="Instagram" className="footer-social"><Instagram size={14} strokeWidth={2.5} /></a>
             <a href="#facebook" aria-label="Facebook" className="footer-social"><Facebook size={14} fill="currentColor" strokeWidth={0} /></a>
           </div>
-          <div className="footer-legal mx-auto mt-14 flex max-w-xl justify-center gap-10 border-b border-line-dark pb-8 text-[10px]"><span>Privacy</span><span>Voorwaarden</span><span>Cookies</span></div>
+          <div className="footer-legal mx-auto mt-14 flex max-w-xl justify-center gap-10 pb-5 text-[10px]"><span>Privacy</span><span>Voorwaarden</span><span>Cookies</span></div>
+          <div className="footer-divider" aria-hidden="true">
+            <svg viewBox="0 0 1440 28" preserveAspectRatio="none">
+              <path d="M0 27 H470 C484 27 490 20 490 10 C490 4 496 1 504 1 H936 C944 1 950 4 950 10 C950 20 956 27 970 27 H1440" />
+            </svg>
+          </div>
           <p className="mt-5 text-[10px] text-muted-blue">© 2026 Kerstmarkt Oostende</p>
         </div>
       </footer>
