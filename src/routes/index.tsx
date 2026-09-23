@@ -50,7 +50,7 @@ function Index() {
     const animatedElements = sections.flatMap((section) => {
       const children = Array.from(section.children).filter((child): child is HTMLElement => child instanceof HTMLElement);
       children.forEach((child, index) => {
-        child.dataset.entrance = "pending";
+        child.dataset.entrance = "ready";
         child.style.setProperty("--entrance-delay", `${Math.min(index * 80, 480)}ms`);
       });
       return children;
