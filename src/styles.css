@@ -44,6 +44,27 @@
   object-fit: contain;
 }
 
+[data-entrance="pending"] {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+}
+
+[data-entrance="visible"] {
+  opacity: 1;
+  transform: none;
+  transition: opacity 700ms cubic-bezier(.22, 1, .36, 1), transform 700ms cubic-bezier(.22, 1, .36, 1);
+  transition-delay: var(--entrance-delay, 0ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-entrance="pending"],
+  [data-entrance="visible"] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 .hero-bg-dots {
   position: absolute;
   inset: 0;

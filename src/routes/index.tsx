@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Facebook, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import apresImage from "@/assets/apres-ski.jpg";
@@ -44,6 +44,35 @@ function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
   const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   const activeWeekEvents = weekEvents[activeWeek] ?? [];
+
+  useEffect(() => {
+    const sections = Array.from(document.querySelectorAll<HTMLElement>("main > section, main > footer"));
+    const animatedElements = sections.flatMap((section) => {
+      const children = Array.from(section.children).filter((child): child is HTMLElement => child instanceof HTMLElement);
+      section.dataset.entrance = "pending";
+      children.forEach((child, index) => {
+        child.dataset.entrance = "pending";
+        child.style.setProperty("--entrance-delay", `${Math.min(index * 80, 480)}ms`);
+      });
+      return [section, ...children];
+    });
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      animatedElements.forEach((element) => { element.dataset.entrance = "visible"; });
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        (entry.target as HTMLElement).dataset.entrance = "visible";
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+
+    animatedElements.forEach((element) => observer.observe(element));
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <main className="overflow-hidden bg-background text-foreground">
