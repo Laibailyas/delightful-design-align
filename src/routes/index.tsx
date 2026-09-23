@@ -204,7 +204,9 @@ function Index() {
                 <button type="button" className="flex w-full items-center justify-between gap-6 py-5 text-left font-display text-base" onClick={() => setOpenFaq(isOpen ? -1 : index)} aria-expanded={isOpen}>
                   <span className={isOpen ? "font-bold" : ""}>{question}</span><span className="text-xl leading-none">{isOpen ? "−" : "+"}</span>
                 </button>
-                {isOpen && <p className="max-w-2xl pb-5 pr-10 font-display text-sm leading-relaxed">{answer}</p>}
+                <div className={`faq-answer ${isOpen ? "is-open" : ""}`} aria-hidden={!isOpen}>
+                  <div><p className="max-w-2xl pb-5 pr-10 font-display text-sm leading-relaxed">{answer}</p></div>
+                </div>
               </div>;
             })}
           </div>

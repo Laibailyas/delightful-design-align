@@ -66,7 +66,7 @@
 .program-top-dots,
 .locaties-dots,
 .footer-dots {
-  animation: dots-float 7s ease-in-out infinite alternate;
+  animation: dots-float 5.5s ease-in-out infinite alternate;
   will-change: transform;
 }
 
@@ -265,6 +265,22 @@
   vector-effect: non-scaling-stroke;
 }
 
+.faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: grid-template-rows 420ms cubic-bezier(.22, 1, .36, 1), opacity 260ms ease, transform 420ms cubic-bezier(.22, 1, .36, 1);
+}
+
+.faq-answer > div { overflow: hidden; }
+
+.faq-answer.is-open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .hero-frame-decoration {
   z-index: 1;
   opacity: 1;
@@ -365,4 +381,9 @@
   .program-top-dots,
   .locaties-dots,
   .footer-dots { animation-play-state: paused; }
+
+  .faq-answer {
+    transition: none;
+    transform: none;
+  }
 }
