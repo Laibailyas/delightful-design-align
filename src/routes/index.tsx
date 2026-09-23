@@ -91,7 +91,7 @@ function Index() {
             {([[
               "Locaties", "locaties"
             ], ["Programma", "programma"], ["Schaatspiste", "schaatsen"], ["FAQ", "faq"], ["Sponsors", "sponsors"], ["Contact", "contact"]] as const).map(([label,id]) =>
-              <button key={id} onClick={() => scrollTo(id)} className="cursor-pointer transition-colors hover:text-sky">{label}</button>
+              <button key={id} onClick={() => scrollTo(id)} className="site-nav-link cursor-pointer transition-colors hover:text-sky">{label}</button>
             )}
           </nav>
         </header>
@@ -201,7 +201,7 @@ function Index() {
             {faqItems.map(([question, answer], index) => {
               const isOpen = openFaq === index;
               return <div key={question} className="border-b border-border">
-                <button type="button" className="flex w-full items-center justify-between gap-6 py-5 text-left font-display text-base" onClick={() => setOpenFaq(isOpen ? -1 : index)} aria-expanded={isOpen}>
+                <button type="button" className="faq-question flex w-full items-center justify-between gap-6 py-5 text-left font-display text-base" onClick={() => setOpenFaq(isOpen ? -1 : index)} aria-expanded={isOpen}>
                   <span className={isOpen ? "font-bold" : ""}>{question}</span><span className="text-xl leading-none">{isOpen ? "−" : "+"}</span>
                 </button>
                 <div className={`faq-answer ${isOpen ? "is-open" : ""}`} aria-hidden={!isOpen}>
