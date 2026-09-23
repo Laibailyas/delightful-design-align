@@ -47,6 +47,7 @@ function Index() {
   const [openFaq, setOpenFaq] = useState(3);
   const [menuOpen, setMenuOpen] = useState(false);
   const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  const activeWeekEvents = weekEvents[activeWeek] ?? [];
 
   return (
     <main className="overflow-hidden bg-background text-foreground">
@@ -145,7 +146,7 @@ function Index() {
             {[1,2,3,4,5].map((w) => <Button key={w} variant={activeWeek === w ? "winterOutline" : "ghostLight"} size="sm" onClick={() => setActiveWeek(w)}>Week {w}</Button>)}
           </div>
           <div className="mt-14 grid gap-16 md:grid-cols-2">
-            <div>{weekEvents[activeWeek].map(([date,title],i) => <div key={`${activeWeek}-${date}`} className={`event-row grid grid-cols-[55px_1fr] border-b border-line-dark px-5 py-3 ${i===3 ? "bg-surface-dark" : ""}`}><div><strong className="text-xl">{date}</strong><span className="block text-[9px]">dec</span></div><strong className="self-center font-display text-lg">{title}</strong></div>)}</div>
+            <div>{activeWeekEvents.map(([date,title],i) => <div key={`${activeWeek}-${date}`} className={`event-row grid grid-cols-[55px_1fr] border-b border-line-dark px-5 py-3 ${i===3 ? "bg-surface-dark" : ""}`}><div><strong className="text-xl">{date}</strong><span className="block text-[9px]">dec</span></div><strong className="self-center font-display text-lg">{title}</strong></div>)}</div>
             <article className="overflow-hidden rounded-[28px] bg-paper text-ink">
               <div className="relative"><img src={apresImage} loading="lazy" width={1280} height={720} alt="Après ski chalet" className="h-60 w-full object-cover" /><div className="absolute inset-0 flex flex-col items-center justify-center text-primary-foreground"><h3 className="font-display text-4xl">Après ski</h3><span className="mt-2 rounded-full bg-paper px-3 py-1 text-xs text-ink">10 december</span></div></div>
               <p className="px-10 py-12 text-center font-display text-base leading-relaxed">In de almhütte waan je je onmiddellijk op de skipiste, met elke avond een dj of optreden om de beste après ski hits op je los te laten.</p>
