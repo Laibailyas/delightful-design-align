@@ -49,12 +49,11 @@ function Index() {
     const sections = Array.from(document.querySelectorAll<HTMLElement>("main > section, main > footer"));
     const animatedElements = sections.flatMap((section) => {
       const children = Array.from(section.children).filter((child): child is HTMLElement => child instanceof HTMLElement);
-      section.dataset.entrance = "pending";
       children.forEach((child, index) => {
         child.dataset.entrance = "pending";
         child.style.setProperty("--entrance-delay", `${Math.min(index * 80, 480)}ms`);
       });
-      return [section, ...children];
+      return children;
     });
 
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
