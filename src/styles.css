@@ -186,7 +186,7 @@
 
 .footer-dots {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   z-index: 0;
   width: 100%;
@@ -286,23 +286,26 @@
   max-width: none;
   object-fit: contain;
   opacity: 0.82;
+  mix-blend-mode: multiply;
   filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));
 }
 
 .landmark-left {
   left: 0;
-  width: 34vw;
-  max-width: 430px;
+  width: 38vw;
+  max-width: 490px;
   height: 72%;
   min-height: 260px;
+  justify-content: flex-start;
 }
 
 .landmark-right {
   right: 0;
-  width: 33vw;
-  max-width: 420px;
+  width: 38vw;
+  max-width: 490px;
   height: 92%;
   min-height: 410px;
+  justify-content: flex-end;
 }
 
 .pricing-tree {

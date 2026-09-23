@@ -109,10 +109,10 @@ function Index() {
       <section id="locaties" className="relative flex min-h-screen items-center bg-paper px-5 pb-32 pt-28 text-ink">
         <img src={sectionDotsAsset.url} className="locaties-dots" alt="" aria-hidden="true" />
         <div className="landmark-block landmark-left" aria-hidden="true">
-          <img src="/landmark-pavilion.png" alt="" className="landmark-image" />
+          <img src="/landmark-church.png" alt="" className="landmark-image" />
         </div>
         <div className="landmark-block landmark-right" aria-hidden="true">
-          <img src="/landmark-church.png" alt="" className="landmark-image" />
+          <img src="/landmark-pavilion.png" alt="" className="landmark-image" />
         </div>
         <div className="relative z-10 mx-auto max-w-2xl text-center font-display text-xl leading-relaxed md:text-2xl">
           <p>Schaatsen tot je wangen gloeien, warme chocomelk<br />tussen de chalets en muziek die over het plein waait.</p>
@@ -134,7 +134,7 @@ function Index() {
         </div>
       </section>
 
-      <section id="programma" className="program-section winter-panel snow-layer relative px-5 pb-32 pt-32 text-primary-foreground">
+      <section id="programma" className="program-section winter-panel snow-layer relative px-5 pb-32 pt-24 text-primary-foreground">
         <img src={heroDotsAsset.url} className="program-top-dots" alt="" aria-hidden="true" />
         <div className="wave-top-paper" aria-hidden="true" />
         <div className="relative z-10 mx-auto max-w-5xl">
