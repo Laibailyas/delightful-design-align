@@ -45,7 +45,7 @@
 }
 
 [data-entrance="visible"] {
-  animation: entrance-reveal 700ms cubic-bezier(.22, 1, .36, 1) both;
+  animation: entrance-reveal 850ms cubic-bezier(.22, 1, .36, 1) both;
   animation-delay: var(--entrance-delay, 0ms);
 }
 
@@ -58,8 +58,21 @@
 }
 
 @keyframes entrance-reveal {
-  from { opacity: .72; transform: translate3d(0, 10px, 0); }
+  from { opacity: .72; transform: translate3d(0, 28px, 0); }
   to { opacity: 1; transform: none; }
+}
+
+.hero-bg-dots,
+.program-top-dots,
+.locaties-dots,
+.footer-dots {
+  animation: dots-float 7s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes dots-float {
+  from { transform: translate3d(0, -8px, 0); }
+  to { transform: translate3d(0, 10px, 0); }
 }
 
 .hero-bg-dots {
@@ -346,4 +359,10 @@
 @keyframes snow-drift { to { background-position: 20px 110px, -15px 150px, 0 0; } }
 @keyframes logo-marquee { to { transform: translateX(-50%); } }
 
-@media (prefers-reduced-motion: reduce) { .logo-marquee { animation-play-state: paused; } }
+@media (prefers-reduced-motion: reduce) {
+  .logo-marquee,
+  .hero-bg-dots,
+  .program-top-dots,
+  .locaties-dots,
+  .footer-dots { animation-play-state: paused; }
+}
