@@ -16,6 +16,9 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        snow: "bg-paper text-ink shadow-none hover:bg-sky hover:text-primary-foreground",
+        winterOutline: "border border-line-dark bg-transparent text-primary-foreground shadow-none hover:border-sky hover:bg-surface-dark",
+        ghostLight: "bg-transparent text-primary-foreground shadow-none hover:bg-surface-dark",
       },
       size: {
         default: "h-9 px-4 py-2",
