@@ -48,12 +48,12 @@ function Index() {
   useEffect(() => {
     const sections = Array.from(document.querySelectorAll<HTMLElement>("main > section, main > footer"));
     const animatedElements = sections.flatMap((section) => {
-      const children = Array.from(section.children).filter((child): child is HTMLElement => child instanceof HTMLElement);
-      children.forEach((child, index) => {
-        child.dataset.entrance = "ready";
-        child.style.setProperty("--entrance-delay", `${Math.min(index * 80, 480)}ms`);
+      const elements = Array.from(section.querySelectorAll<HTMLElement>("h1, h2, h3, p, button, a, article, img:not([aria-hidden='true'])"));
+      elements.forEach((element, index) => {
+        element.dataset.entrance = "ready";
+        element.style.setProperty("--entrance-delay", `${Math.min(index * 45, 360)}ms`);
       });
-      return children;
+      return elements;
     });
 
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
