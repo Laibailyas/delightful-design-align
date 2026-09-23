@@ -4,10 +4,6 @@ import { Facebook, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import apresImage from "@/assets/apres-ski.jpg";
 import skatesImage from "@/assets/ice-skates.jpg";
-import footerDotsAsset from "@/assets/footer-dots.png.asset.json";
-import heroDotsAsset from "@/assets/hero-dots.png.asset.json";
-import pricingTreeAsset from "@/assets/pricing-tree.png.asset.json";
-import sectionDotsAsset from "@/assets/section-dots.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -52,7 +48,7 @@ function Index() {
   return (
     <main className="overflow-hidden bg-background text-foreground">
       <section className="winter-panel relative min-h-[760px] text-primary-foreground">
-        <img src={heroDotsAsset.url} className="hero-bg-dots" alt="" aria-hidden="true" />
+        <img src="/dot-texture.svg" className="hero-bg-dots" alt="" aria-hidden="true" />
         <header className="relative z-20 mx-auto max-w-6xl px-5 pt-5">
           <div className="relative flex items-center justify-between gap-6">
             <img src="/logo.png" alt="Kerstmarkt Oostende" className="h-auto w-40" />
@@ -107,7 +103,7 @@ function Index() {
       </section>
 
       <section id="locaties" className="relative flex min-h-screen items-center bg-paper px-5 pb-32 pt-28 text-ink">
-        <img src={sectionDotsAsset.url} className="locaties-dots" alt="" aria-hidden="true" />
+        <img src="/section-dots.svg" className="locaties-dots" alt="" aria-hidden="true" />
         <div className="landmark-block landmark-left" aria-hidden="true">
           <img src="/landmark-church.png" alt="" className="landmark-image" />
         </div>
@@ -135,7 +131,7 @@ function Index() {
       </section>
 
       <section id="programma" className="program-section winter-panel snow-layer relative px-5 pb-32 pt-24 text-primary-foreground">
-        <img src={heroDotsAsset.url} className="program-top-dots" alt="" aria-hidden="true" />
+        <img src="/dot-texture.svg" className="program-top-dots" alt="" aria-hidden="true" />
         <div className="wave-top-paper" aria-hidden="true" />
         <div className="relative z-10 mx-auto max-w-5xl">
           <h2 className="text-center font-display text-5xl">Een programma vol <span className="text-sky">magie</span></h2>
@@ -158,7 +154,7 @@ function Index() {
               <div className="grid md:grid-cols-[.85fr_1.35fr]">
                 <img src={skatesImage} loading="lazy" width={768} height={1024} alt="Witte schaatsen" className="skate-image h-full max-h-[520px] w-full object-cover" />
                 <div className="relative p-8 md:p-14">
-                  <img src={pricingTreeAsset.url} alt="" aria-hidden="true" className="pricing-tree" />
+                  <img src="/pricing-skate-outline.svg" alt="" aria-hidden="true" className="pricing-tree" />
                   <div className="relative z-10 flex items-center justify-between"><h3 className="font-display text-2xl">Prijzen</h3><span className="text-xs">Onbeperkt schaatsplezier</span></div>
                   <div className="relative z-10 mt-5 text-sm">{[["Kinderen tot 12 jaar","€6"],["Volwassenen","€9"],["Groepen (10+) / Kinderen tot 12 jaar","€8"],["Groepen (10+) / Volwassenen","€8"],["UitPAS","€5"]].map(([a,b]) => <div key={a} className="flex justify-between border-b border-line-dark py-4"><span>{a}</span><span className="text-sky">{b}</span></div>)}</div>
                   <div className="relative z-10 mt-8 flex flex-wrap items-center gap-6"><Button variant="snow">Schaatspiste boeken*</Button><span className="text-xs text-muted-blue">*Reserveren is enkel vereist voor scholen,<br />verenigingen en andere grote groepen.</span></div>
@@ -194,7 +190,7 @@ function Index() {
 
       <footer id="contact" className="footer-section winter-panel snow-layer relative px-5 pb-4 pt-32 text-center text-primary-foreground">
         <div className="wave-top-paper" aria-hidden="true" />
-        <img src={footerDotsAsset.url} className="footer-dots" alt="" aria-hidden="true" />
+        <img src="/footer-dots.svg" className="footer-dots" alt="" aria-hidden="true" />
         <div className="relative z-10">
           <div className="footer-tilt">
             <h2 className="font-display text-[36px] leading-[1.08] md:text-[40px]">Jouw warmste winter-<br />moment begint <span className="text-sky">bij ons.</span></h2>
